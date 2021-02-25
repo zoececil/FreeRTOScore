@@ -1,0 +1,11 @@
+.\objects\main.o: ..\User\main.c
+.\objects\main.o: ..\freertos\inc\FreeRTOS.h
+.\objects\main.o: ..\freertos\inc\FreeRTOSConfig.h
+.\objects\main.o: ..\freertos\inc\projdefs.h
+.\objects\main.o: ..\freertos\inc\portable.h
+.\objects\main.o: ..\freertos\inc\portmacro.h
+.\objects\main.o: D:\KEIL5\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: D:\KEIL5\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\main.o: ..\freertos\inc\list.h
+.\objects\main.o: ..\freertos\inc\FreeRTOS.h
+.\objects\main.o: ..\freertos\inc\task.h
