@@ -7,11 +7,11 @@ portCHAR flag2;
 extern List_t pxReadyTasksLists[ configMAX_PRIORITIES ];
 /*******************************************************************/
 TaskHandle_t Task1_Handle;
-#define TASK1_STACK_SIZE    20
+#define TASK1_STACK_SIZE    128
 StackType_t Task1Stack[TASK1_STACK_SIZE];
 TCB_t Task1TCB;
 TaskHandle_t Task2_Handle;
-#define TASK2_STACK_SIZE    20
+#define TASK2_STACK_SIZE    128
 StackType_t Task2Stack[TASK2_STACK_SIZE];
 TCB_t Task2TCB;
 
@@ -24,7 +24,6 @@ void Task2_Entry(void *p_arg);
 /********************************************************************/
 int main(void)
 {
-	prvInitialiseTaskLists();
 	/* 创建任务 */
     Task1_Handle = xTaskCreateStatic( (TaskFunction_t)Task1_Entry,   /* 任务入口 */
 					                  (char *)"Task1",               /* 任务名称，字符串形式 */
@@ -42,9 +41,8 @@ int main(void)
 									  (UBaseType_t) 2,               /* 任务优先级，数值越大，优先级越高 */
 					                  (StackType_t *)Task2Stack,     /* 任务栈起始地址 */
 					                  (TCB_t *)&Task2TCB );          /* 任务控制块 */
-    // /* 将任务添加到就绪列表 */                                 
-    // vListInsertEnd( &( pxReadyTasksLists[2] ), &( ((TCB_t *)(&Task2TCB))->xStateListItem ) );
-
+    /* 在启动调度器前，关闭中断 */                                  
+    portDISABLE_INTERRUPTS();
     /* 启动调度器，开始多任务调度，启动成功则不返回 */
     vTaskStartScheduler();                                      
     
@@ -64,20 +62,10 @@ void Task1_Entry( void *p_arg )
 {
 	for( ;; )
 	{
-#if 0        
-		flag1 = 1;
-		delay( 100 );		
-		flag1 = 0;
-		delay( 100 );
-		
-		/* 线程切换，这里是手动切换 */
-        portYIELD();
-#else
 		flag1 = 1;
         vTaskDelay( 2 );		
 		flag1 = 0;
-        vTaskDelay( 2 );
-#endif        
+        vTaskDelay( 2 );      
 	}
 }
 
@@ -86,20 +74,10 @@ void Task2_Entry( void *p_arg )
 {
 	for( ;; )
 	{
-#if 0        
-		flag2 = 1;
-		delay( 100 );		
-		flag2 = 0;
-		delay( 100 );
-		
-		/* 线程切换，这里是手动切换 */
-        portYIELD();
-#else
 		flag2 = 1;
         vTaskDelay( 2 );		
 		flag2 = 0;
-        vTaskDelay( 2 );
-#endif        
+        vTaskDelay( 2 );    
 	}
 }
 void vApplicationGetIdleTaskMemory( TCB_t **ppxIdleTaskTCBBuffer, 

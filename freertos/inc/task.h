@@ -46,5 +46,7 @@ void vTaskDelay( const TickType_t xTicksToDelay );
 void xTaskIncrementTick( void );
 static portTASK_FUNCTION( prvIdleTask, pvParameters );
 static void prvAddNewTaskToReadyList( TCB_t *pxNewTCB );
+static void prvAddCurrentTaskToDelayedList( TickType_t xTicksToWait );
+static void prvResetNextTaskUnblockTime( void );
 #endif /* INC_TASK_H */
 

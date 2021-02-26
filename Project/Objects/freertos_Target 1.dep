@@ -1,5 +1,5 @@
 Dependencies for Project 'freertos', Target 'Target 1': (DO NOT MODIFY !)
-F (..\User\main.c)(0x6038ADD9)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\freertos\inc-ID:\projects\CodeForZoe\rtos_work\FreeRTOS\Project\RTE-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="521" -D_RTE_ -DARMCM3-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\User\main.c)(0x6038F117)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\freertos\inc-ID:\projects\CodeForZoe\rtos_work\FreeRTOS\Project\RTE-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="521" -D_RTE_ -DARMCM3-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\freertos\inc\FreeRTOS.h)(0x6034CFBC)
 I (..\freertos\inc\FreeRTOSConfig.h)(0x60376499)
 I (..\freertos\inc\projdefs.h)(0x6034B037)
@@ -8,7 +8,7 @@ I (..\freertos\inc\portmacro.h)(0x6038A7CC)
 I (D:\KEIL5\MDK\ARM\ARMCC\include\stdint.h)(0x574E3E26)
 I (D:\KEIL5\MDK\ARM\ARMCC\include\stddef.h)(0x574E3E26)
 I (..\freertos\inc\list.h)(0x60376FB6)
-I (..\freertos\inc\task.h)(0x6038A963)
+I (..\freertos\inc\task.h)(0x6038B796)
 F (..\freertos\src\list.c)(0x6034B507)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\freertos\inc-ID:\projects\CodeForZoe\rtos_work\FreeRTOS\Project\RTE-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="521" -D_RTE_ -DARMCM3-o .\objects\list.o --omf_browse .\objects\list.crf --depend .\objects\list.d)
 I (D:\KEIL5\MDK\ARM\ARMCC\include\stdlib.h)(0x574E3E26)
 I (..\freertos\inc\list.h)(0x60376FB6)
@@ -19,8 +19,8 @@ I (..\freertos\inc\portable.h)(0x6034CFD6)
 I (..\freertos\inc\portmacro.h)(0x6038A7CC)
 I (D:\KEIL5\MDK\ARM\ARMCC\include\stdint.h)(0x574E3E26)
 I (D:\KEIL5\MDK\ARM\ARMCC\include\stddef.h)(0x574E3E26)
-F (..\freertos\src\task.c)(0x6038AEC3)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\freertos\inc-ID:\projects\CodeForZoe\rtos_work\FreeRTOS\Project\RTE-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="521" -D_RTE_ -DARMCM3-o .\objects\task.o --omf_browse .\objects\task.crf --depend .\objects\task.d)
-I (..\freertos\inc\task.h)(0x6038A963)
+F (..\freertos\src\task.c)(0x6038E658)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\freertos\inc-ID:\projects\CodeForZoe\rtos_work\FreeRTOS\Project\RTE-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="521" -D_RTE_ -DARMCM3-o .\objects\task.o --omf_browse .\objects\task.crf --depend .\objects\task.d)
+I (..\freertos\inc\task.h)(0x6038B796)
 I (..\freertos\inc\FreeRTOS.h)(0x6034CFBC)
 I (..\freertos\inc\FreeRTOSConfig.h)(0x60376499)
 I (..\freertos\inc\projdefs.h)(0x6034B037)
@@ -38,7 +38,7 @@ I (..\freertos\inc\portmacro.h)(0x6038A7CC)
 I (D:\KEIL5\MDK\ARM\ARMCC\include\stdint.h)(0x574E3E26)
 I (D:\KEIL5\MDK\ARM\ARMCC\include\stddef.h)(0x574E3E26)
 I (..\freertos\inc\list.h)(0x60376FB6)
-I (..\freertos\inc\task.h)(0x6038A963)
+I (..\freertos\inc\task.h)(0x6038B796)
 I (D:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM3\Include\ARMCM3.h)(0x562075B4)
 I (D:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625B70C)
 I (D:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
@@ -51,7 +51,7 @@ F (..\freertos\inc\list.h)(0x60376FB6)()
 F (..\freertos\inc\portable.h)(0x6034CFD6)()
 F (..\freertos\inc\portmacro.h)(0x6038A7CC)()
 F (..\freertos\inc\projdefs.h)(0x6034B037)()
-F (..\freertos\inc\task.h)(0x6038A963)()
+F (..\freertos\inc\task.h)(0x6038B796)()
 F (RTE\Device\ARMCM3\startup_ARMCM3.s)(0x50B2CC4C)(--cpu Cortex-M3 --li -g --apcs=interwork -ID:\projects\CodeForZoe\rtos_work\FreeRTOS\Project\RTE-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM3\Include--pd "__UVISION_VERSION SETA 521" --pd "_RTE_ SETA 1" --pd "ARMCM3 SETA 1"--list .\listings\startup_armcm3.lst --xref -o .\objects\startup_armcm3.o --depend .\objects\startup_armcm3.d)
 F (RTE\Device\ARMCM3\system_ARMCM3.c)(0x55D41F08)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\freertos\inc-ID:\projects\CodeForZoe\rtos_work\FreeRTOS\Project\RTE-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-ID:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="521" -D_RTE_ -DARMCM3-o .\objects\system_armcm3.o --omf_browse .\objects\system_armcm3.crf --depend .\objects\system_armcm3.d)
 I (D:\KEIL5\MDK\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM3\Include\ARMCM3.h)(0x562075B4)
