@@ -39,6 +39,9 @@ static void prvInitialiseNewTask( 	TaskFunction_t pxTaskCode,              /* �
 									UBaseType_t uxPriority,              /* 任务优先级，数值越大，优先级越高 */
 									TaskHandle_t * const pxCreatedTask,     /* 任务句柄 */
 									TCB_t *pxNewTCB );
+void vApplicationGetIdleTaskMemory( TCB_t **ppxIdleTaskTCBBuffer, 
+                                    StackType_t **ppxIdleTaskStackBuffer, 
+                                    uint32_t *pulIdleTaskStackSize );
 void prvInitialiseTaskLists( void );                                
 void vTaskStartScheduler( void );
 void vTaskSwitchContext( void );

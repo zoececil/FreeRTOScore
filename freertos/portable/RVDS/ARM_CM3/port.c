@@ -246,7 +246,6 @@ void xPortSysTickHandler( void )/*Systick中断服务函数*/
     vPortRaiseBASEPRI();
     
     {
-        //xTaskIncrementTick();
         
         /* 更新系统时基 */
 		if( xTaskIncrementTick() != pdFALSE )

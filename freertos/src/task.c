@@ -18,6 +18,9 @@ static List_t * volatile pxOverflowDelayedTaskList;
 
 static volatile TickType_t xNextTaskUnblockTime		= ( TickType_t ) 0U;
 static volatile BaseType_t xNumOfOverflows 			= ( BaseType_t ) 0;
+
+StackType_t IdleTaskStack[configMINIMAL_STACK_SIZE];
+TCB_t IdleTaskTCB;
 /*********************************************************************************************************************************/
 /* 将任务添加到就绪列表 */                                    
 #define prvAddTaskToReadyList( pxTCB )																   \
@@ -254,10 +257,15 @@ static void prvAddNewTaskToReadyList( TCB_t *pxNewTCB )
 
 extern TCB_t Task1TCB;
 extern TCB_t Task2TCB;
-extern TCB_t IdleTaskTCB;
+// extern TCB_t IdleTaskTCB;
 void vApplicationGetIdleTaskMemory( TCB_t **ppxIdleTaskTCBBuffer, 
                                     StackType_t **ppxIdleTaskStackBuffer, 
-                                    uint32_t *pulIdleTaskStackSize );
+                                    uint32_t *pulIdleTaskStackSize )
+{
+		*ppxIdleTaskTCBBuffer=&IdleTaskTCB;
+		*ppxIdleTaskStackBuffer=IdleTaskStack; 
+		*pulIdleTaskStackSize=configMINIMAL_STACK_SIZE;
+}
 void vTaskStartScheduler( void )/*调度器的启动*/
 {
 	/*======================================创建空闲任务start==============================================*/     

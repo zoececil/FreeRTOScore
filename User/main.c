@@ -20,8 +20,6 @@ TaskHandle_t Task3_Handle;
 StackType_t Task3Stack[TASK3_STACK_SIZE];
 TCB_t Task3TCB;
 
-StackType_t IdleTaskStack[configMINIMAL_STACK_SIZE];
-TCB_t IdleTaskTCB;
 /********************************************************************/
 void delay (uint32_t count);
 void Task1_Entry(void *p_arg);
@@ -38,8 +36,6 @@ int main(void)
 									  (UBaseType_t) 2,               /* 任务优先级，数值越大，优先级越高 */
 					                  (StackType_t *)Task1Stack,     /* 任务栈起始地址 */
 					                  (TCB_t *)&Task1TCB );          /* 任务控制块 */
-    // /* 将任务添加到就绪列表 */                                 
-    // vListInsertEnd( &( pxReadyTasksLists[1] ), &( ((TCB_t *)(&Task1TCB))->xStateListItem ) );
     Task2_Handle = xTaskCreateStatic( (TaskFunction_t)Task2_Entry,   /* 任务入口 */
 					                  (char *)"Task2",               /* 任务名称，字符串形式 */
 					                  (uint32_t)TASK2_STACK_SIZE ,   /* 任务栈大小，单位为字 */
@@ -134,11 +130,4 @@ void Task3_Entry( void *p_arg )
         //delay (100);
 	}
 }
-void vApplicationGetIdleTaskMemory( TCB_t **ppxIdleTaskTCBBuffer, 
-                                    StackType_t **ppxIdleTaskStackBuffer, 
-                                    uint32_t *pulIdleTaskStackSize )
-{
-		*ppxIdleTaskTCBBuffer=&IdleTaskTCB;
-		*ppxIdleTaskStackBuffer=IdleTaskStack; 
-		*pulIdleTaskStackSize=configMINIMAL_STACK_SIZE;
-}
+
