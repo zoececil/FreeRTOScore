@@ -43,7 +43,7 @@ void prvInitialiseTaskLists( void );
 void vTaskStartScheduler( void );
 void vTaskSwitchContext( void );
 void vTaskDelay( const TickType_t xTicksToDelay );
-void xTaskIncrementTick( void );
+BaseType_t xTaskIncrementTick( void );
 static portTASK_FUNCTION( prvIdleTask, pvParameters );
 static void prvAddNewTaskToReadyList( TCB_t *pxNewTCB );
 static void prvAddCurrentTaskToDelayedList( TickType_t xTicksToWait );
